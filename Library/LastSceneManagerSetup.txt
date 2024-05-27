@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/Score_Timer.unity
+- path: Assets/Scenes/TestScenes/ChangeView.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -12,8 +12,6 @@ public class ChangeView : MonoBehaviour
     {
         CameraSwitcher.Register(TPV_Cam);
         CameraSwitcher.Register(FPV_Cam);
-
-        CameraSwitcher.SwitchCam(FPV_Cam);
     }
 
     private void OnDisable()
