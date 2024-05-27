@@ -12,6 +12,17 @@ public class DetectDoor : MonoBehaviour
 
     private char currImg;
 
+    private void Start()
+    {
+        Vector3 currScale = this.transform.localScale;
+        currScale.z = Attributes.vision + 3;
+        this.transform.localScale = currScale;
+
+        Vector3 currPosition = this.transform.localPosition;
+        currPosition.z = Attributes.vision * 0.5f + 1.75f;
+        this.transform.localPosition = currPosition;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (CollidedIsADoor(other.name))

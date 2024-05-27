@@ -16,4 +16,5 @@ public static class Attributes
 
     public static int speed = 5;
     public static int jump = 2;
+    public static int vision = 1;
 }
