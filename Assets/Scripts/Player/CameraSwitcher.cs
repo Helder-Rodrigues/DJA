@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using Unity.VisualScripting.FullSerializer;
 
 public static class CameraSwitcher 
 {
-    private static List<CinemachineVirtualCamera> cams = new List<CinemachineVirtualCamera>();
-    private static CinemachineVirtualCamera ActvCam = null;
-    public static bool inFPV = true;
+    public static List<CinemachineVirtualCamera> cams = new List<CinemachineVirtualCamera>();
+    public static CinemachineVirtualCamera ActvCam = null;
+    public static bool inFPV = false; // "SwitchCam()" is called at start so the value is "true"
 
     public static void SwitchCam(CinemachineVirtualCamera cam)
     {
