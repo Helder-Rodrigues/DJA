@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 namespace Sample
@@ -28,11 +29,11 @@ namespace Sample
 
         void Update()
         {
-            MOVE();
-            Respawn();
+                MOVE();
+                Respawn();
         }
 
-        private void MOVE()
+        public void MOVE()
         {
             if (GameManager.GhostMove)
                 agent.destination = player.position;

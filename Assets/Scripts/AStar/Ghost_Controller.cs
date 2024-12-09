@@ -11,11 +11,6 @@ public class Ghost_Controller : MonoBehaviour
         currentNode = AStarManager.instance.FindNearestNode(transform.position);
     }
 
-    private void Update()
-    {
-        CreatePath();
-    }
-
     private void OnDrawGizmos()
     {
         if (path.Count > 0)
@@ -62,6 +57,7 @@ public class Ghost_Controller : MonoBehaviour
             Node[] nodes = FindObjectsOfType<Node>();
             while (path == null || path.Count == 0)
             {
+                currentNode = AStarManager.instance.FindNearestNode(transform.position);
                 path = AStarManager.instance.GeneratePath(currentNode, nodes[Random.Range(0, nodes.Length)]);
             }
         }

@@ -23,7 +23,7 @@ public class NodeParent : MonoBehaviour
             return;
 
         float spacing = 3f;
-        float yPosition = -6.5f;
+        float yPosition = -7.3f;
 
         int columns = Mathf.CeilToInt(Mathf.Abs(EndPosition.x - StartPosition.x) / spacing);
         int rows = Mathf.CeilToInt(Mathf.Abs(EndPosition.y - StartPosition.y) / spacing);
@@ -41,9 +41,12 @@ public class NodeParent : MonoBehaviour
                 Node nodeComponent = nodeObj.GetComponent<Node>();
                 if (nodeComponent != null)
                 {
-                    nodeObj.name += row + "_" + col;
-                    nodeComponent.NodeParent = this;
-                    nodes.Add(nodeComponent);
+                    if (nodeComponent != null)
+                    {
+                        nodeObj.name += row + "_" + col;
+                        nodeComponent.NodeParent = this;
+                        nodes.Add(nodeComponent);
+                    }
                 }
             }
         }
@@ -88,5 +91,4 @@ public class NodeParent : MonoBehaviour
 
         return false; // No obstacle detected
     }
-
 }
